@@ -1,5 +1,5 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, ElementRef } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
 interface Stat {
   value: number;
@@ -9,17 +9,17 @@ interface Stat {
 }
 
 @Component({
-  selector: 'app-stats',
+  selector: "app-stats",
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './stats.component.html',
-  styleUrls: ['./stats.component.css']
+  templateUrl: "./stats.component.html",
+  styleUrls: ["./stats.component.css"],
 })
 export class StatsComponent implements OnInit {
   stats: Stat[] = [
-    { value: 500, label: 'Concursos finalizados', suffix: '', current: 0 },
-    { value: 80,  label: 'Concursos activos',     suffix: '',  current: 0 },
-    { value: 1200, label: 'Utilizadores',          suffix: '', current: 0 }
+    { value: 500, label: "Concursos finalizados", suffix: "", current: 0 },
+    { value: 80, label: "Concursos activos", suffix: "", current: 0 },
+    { value: 1200, label: "Utilizadores", suffix: "", current: 0 },
   ];
 
   private animated = false;
@@ -27,20 +27,23 @@ export class StatsComponent implements OnInit {
   constructor(private el: ElementRef) {}
 
   ngOnInit() {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !this.animated) {
-          this.animated = true;
-          this.animateCounters();
-        }
-      });
-    }, { threshold: 0.3 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !this.animated) {
+            this.animated = true;
+            this.animateCounters();
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
 
     observer.observe(this.el.nativeElement);
   }
 
   private animateCounters() {
-    this.stats.forEach(stat => {
+    this.stats.forEach((stat) => {
       const duration = 800;
       const steps = 50;
       const step = stat.value / steps;

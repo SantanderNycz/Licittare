@@ -11,7 +11,7 @@ import {} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ["./maintenance.component.css"],
 })
 export class MaintenanceComponent implements OnInit, OnDestroy {
-  // Contador regressivo – ajuste a data alvo conforme necessário
+  // Contador regressivo
   targetDate = new Date("2026-03-15T09:00:00");
 
   days = signal(0);
