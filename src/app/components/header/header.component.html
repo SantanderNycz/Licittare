@@ -1,4 +1,4 @@
-<header class="header" [class.scrolled]="isScrolled() || mobileMenuOpen() || aboutOpen() || solutionsOpen()" role="banner">
+<header class="header" [class.scrolled]="isScrolled()" [class.dropdown-open]="mobileMenuOpen() || aboutOpen() || solutionsOpen()" role="banner">
   <div class="header-inner container">
 
     <!-- Logo -->

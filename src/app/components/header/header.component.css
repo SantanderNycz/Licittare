@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 1.1rem 0;
+  padding: 0.7rem 0;
   transition:
     background var(--transition-base),
     box-shadow var(--transition-base),
@@ -105,7 +105,7 @@
 
 .dropdown {
   position: absolute;
-  top: calc(100% + 14px);
+  top: calc(100% + 16px);
   left: 50%;
   transform: translateX(-50%) translateY(-8px);
   background: #fff;
@@ -116,15 +116,19 @@
   padding: 0.5rem;
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
   transition:
     opacity var(--transition-fast),
     transform var(--transition-fast);
+  visibility: var(--transition-fast);
+  z-index: 1001;
 }
 
 .dropdown.open {
   opacity: 1;
   pointer-events: all;
   transform: translateX(-50%) translateY(0);
+  visibility: visible;
 }
 
 .dropdown-item {
