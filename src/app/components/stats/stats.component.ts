@@ -36,7 +36,7 @@ export class StatsComponent implements OnInit {
           }
         });
       },
-      { threshold: 0.1 },
+      { threshold: 0.3 },
     );
 
     observer.observe(this.el.nativeElement);
@@ -45,18 +45,17 @@ export class StatsComponent implements OnInit {
   private animateCounters() {
     this.stats.forEach((stat) => {
       const duration = 800;
-      const steps = 50;
-      const step = stat.value / steps;
-      let count = 0;
-      const interval = setInterval(() => {
-        count += step;
-        if (count >= stat.value) {
+      const start = performance.now();
+      const animate = (now: number) => {
+        const elapsed = now - start;
+        if (elapsed >= duration) {
           stat.current = stat.value;
-          clearInterval(interval);
-        } else {
-          stat.current = Math.floor(count);
+          return;
         }
-      }, duration / steps);
+        stat.current = Math.floor(stat.value * (elapsed / duration));
+        requestAnimationFrame(animate);
+      };
+      requestAnimationFrame(animate);
     });
   }
 }
