@@ -1,0 +1,124 @@
+.how-section {
+  padding: var(--section-padding);
+  background: var(--color-bg);
+}
+
+.steps-wrapper {
+  position: relative;
+  margin-bottom: 2rem;
+  z-index: 1;
+}
+
+/* .steps-connector {
+  position: absolute;
+  top: 37%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary) 0%,
+    var(--color-text-primary) 100%
+  );
+  opacity: 0.35;
+  z-index: 0;
+  transform: translateY(-50%);
+} */
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.step-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  position: relative;
+}
+
+.step-num {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  background: rgba(250, 250, 250, 0.95);
+  border: 1.5px solid rgba(83, 162, 29, 0.35);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 5px;
+  left: 55%;
+  position: absolute;
+  z-index: 3;
+}
+
+.step-icon-wrap {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(
+    135deg,
+    rgba(83, 162, 29, 0.25),
+    rgba(83, 162, 29, 0.1)
+  );
+  border: 2px solid rgba(83, 162, 29, 0.2);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.step-card:hover .step-icon-wrap {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.step-icon {
+  font-size: 2rem;
+  color: var(--color-primary);
+}
+
+.step-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.step-desc {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.how-cta {
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .steps-connector {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+}

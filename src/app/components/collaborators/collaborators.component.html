@@ -1,0 +1,114 @@
+<section class="collab-section" id="colaboradores" aria-labelledby="collab-title">
+  <div class="container collab-grid">
+    <!-- Left: Info -->
+    <div class="collab-info">
+      <span class="section-tag">Programa de Colaboradores</span>
+      <h2 class="section-title" id="collab-title">Junte-se à nossa rede de colaboradores</h2>
+      <p class="collab-subtitle">
+        Procuramos expandir negócios e encontrar profissionais que se identifiquem com a nossa missão
+      </p>
+
+      <div class="collab-benefits" role="list" aria-label="Benefícios do programa">
+        <div class="benefit-item" role="listitem">
+          <span class="benefit-icon" aria-hidden="true">
+            <i class="fa-solid fa-sack-dollar"></i>
+          </span>
+          <div>
+            <strong>Ganhe comissões</strong>
+            <p>Receba uma percentagem dos créditos utilizados pelos seus convidados</p>
+          </div>
+        </div>
+        <div class="benefit-item" role="listitem">
+          <span class="benefit-icon" aria-hidden="true"><i class="fa-solid fa-circle-nodes"></i></span>
+          <div>
+            <strong>Expanda a sua rede</strong>
+            <p>Conecte-se com profissionais qualificados e empresas do setor</p>
+          </div>
+        </div>
+        <div class="benefit-item" role="listitem">
+          <span class="benefit-icon" aria-hidden="true"><i class="fa-solid fa-chart-line"></i></span>
+          <div>
+            <strong>Crescimento contínuo</strong>
+            <p>Acesso a novos projetos e oportunidades de negócio constantemente</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Form -->
+    <div class="collab-form-wrapper">
+      <div class="form-card">
+        <h3 class="form-title">Adesão ao Programa de Colaboradores</h3>
+
+        @if (submitted()) {
+        <div class="form-success" role="alert" aria-live="polite">
+          <div class="success-icon" aria-hidden="true">✅</div>
+          <h4>Pedido enviado com sucesso!</h4>
+          <p>Entraremos em contacto em breve. Obrigado pelo interesse.</p>
+          <button class="btn-primary" (click)="resetForm()">Enviar outro pedido</button>
+        </div>
+        } @else {
+        <form #formEl="ngForm" (ngSubmit)="onSubmit(formEl)" novalidate aria-label="Formulário de adesão ao programa de colaboradores">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="nome">Nome <span aria-hidden="true">*</span></label>
+              <input id="nome" type="text" [(ngModel)]="form.nome" name="nome" placeholder="O seu nome" required autocomplete="given-name" aria-required="true" />
+            </div>
+            <div class="form-field">
+              <label for="apelido">Apelido <span aria-hidden="true">*</span></label>
+              <input id="apelido" type="text" [(ngModel)]="form.apelido" name="apelido" placeholder="O seu apelido" required autocomplete="family-name" aria-required="true" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="email">E-mail <span aria-hidden="true">*</span></label>
+              <input id="email" type="email" [(ngModel)]="form.email" name="email" placeholder="email@exemplo.com" required autocomplete="email" aria-required="true" />
+            </div>
+            <div class="form-field">
+              <label for="telefone">Telefone</label>
+              <input id="telefone" type="tel" [(ngModel)]="form.telefone" name="telefone" placeholder="+351 900 000 000" autocomplete="tel" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="especialidade">Especialidade <span aria-hidden="true">*</span></label>
+              <select id="especialidade" [(ngModel)]="form.especialidade" name="especialidade" required aria-required="true">
+                <option value="" disabled>Selecione a sua especialidade</option>
+                @for (esp of especialidades; track esp) {
+                <option [value]="esp">{{ esp }}</option>
+                }
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="experiencia">Experiência <span aria-hidden="true">*</span></label>
+              <select id="experiencia" [(ngModel)]="form.experiencia" name="experiencia" required aria-required="true">
+                <option value="" disabled>Selecione os anos de experiência</option>
+                @for (exp of experiencias; track exp) {
+                <option [value]="exp">{{ exp }}</option>
+                }
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" [(ngModel)]="form.mensagem" name="mensagem" placeholder="Descreva brevemente a sua experiência e motivação..." rows="4" aria-describedby="mensagem-hint"></textarea>
+            <span id="mensagem-hint" class="field-hint">Opcional – partilhe detalhes adicionais sobre o seu perfil</span>
+          </div>
+
+          <button type="submit" class="btn-submit" [disabled]="loading()" [attr.aria-busy]="loading()">
+            @if (loading()) {
+            <span class="spinner" aria-hidden="true"></span>
+            A enviar...
+            } @else {
+            Enviar pedido de adesão
+            }
+          </button>
+        </form>
+        }
+      </div>
+    </div>
+  </div>
+</section>

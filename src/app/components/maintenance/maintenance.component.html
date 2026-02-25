@@ -1,0 +1,122 @@
+<div class="maintenance-page" aria-label="Página de manutenção">
+
+  <!-- Background decorativo -->
+  <div class="bg-layer" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <main class="content" role="main">
+
+    <!-- Logo -->
+    <a href="/" class="logo" aria-label="LicitaNow – Página inicial">
+      <span class="logo-icon" aria-hidden="true"><img src="../../../assets/logo.png" alt="LicitaNow Logo" width="70"></span>
+      <!-- <span class="logo-text">Licita<strong>Now</strong></span> -->
+    </a>
+
+    <!-- Ícone animado -->
+    <div class="icon-wrap" aria-hidden="true">
+      <div class="icon-ring ring-outer"></div>
+      <div class="icon-ring ring-inner"></div>
+      <div class="icon-center">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 20h9" />
+          <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Texto principal -->
+    <div class="text-block">
+      <span class="badge" aria-label="Estado: em manutenção">
+        <span class="badge-dot" aria-hidden="true"></span>
+        Em Manutenção
+      </span>
+      <h1 class="title">Estamos a melhorar<br>a plataforma para si</h1>
+      <p class="subtitle">
+        A LicitaNow encontra-se temporariamente indisponível enquanto realizamos
+        melhorias técnicas. Voltaremos em breve com novidades!
+      </p>
+    </div>
+
+    <!-- Contador regressivo -->
+    <div class="countdown" role="timer" aria-label="Tempo estimado até ao regresso">
+      <div class="countdown-item">
+        <span class="count-val">{{ pad(days()) }}</span>
+        <span class="count-label">Dias</span>
+      </div>
+      <span class="count-sep" aria-hidden="true">:</span>
+      <div class="countdown-item">
+        <span class="count-val">{{ pad(hours()) }}</span>
+        <span class="count-label">Horas</span>
+      </div>
+      <span class="count-sep" aria-hidden="true">:</span>
+      <div class="countdown-item">
+        <span class="count-val">{{ pad(minutes()) }}</span>
+        <span class="count-label">Minutos</span>
+      </div>
+      <span class="count-sep" aria-hidden="true">:</span>
+      <div class="countdown-item">
+        <span class="count-val">{{ pad(seconds()) }}</span>
+        <span class="count-label">Segundos</span>
+      </div>
+    </div>
+
+    <!-- Info cards -->
+    <div class="info-cards" role="list" aria-label="Informações durante a manutenção">
+      <div class="info-card" role="listitem">
+        <span class="info-icon" aria-hidden="true"><i class="fa-solid fa-envelope"></i></span>
+        <div>
+          <strong>Contacto</strong>
+          <p>
+            <a href="mailto:geral&#64;licitanow.com">geral&#64;licitanow.com</a>
+          </p>
+        </div>
+      </div>
+      <div class="info-card" role="listitem">
+        <span class="info-icon" aria-hidden="true"><i class="fa-solid fa-bell"></i></span>
+        <div>
+          <strong>Notificações</strong>
+          <p>Siga-nos nas redes sociais para actualizações em tempo real</p>
+        </div>
+      </div>
+      <div class="info-card" role="listitem">
+        <span class="info-icon" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span>
+        <div>
+          <strong>Os seus dados</strong>
+          <p>Toda a informação está segura e preservada durante a manutenção</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Redes sociais -->
+    <div class="socials" aria-label="Redes sociais da LicitaNow">
+      <a href="https://www.facebook.com/profile.php?id=61579034193178" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener">
+        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+      </a>
+      <a href="https://x.com/licitanow" class="social-btn" aria-label="X (Twitter)" target="_blank" rel="noopener">
+        <i class="fa-brands" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          </svg></i>
+      </a>
+      <a href="https://www.instagram.com/_licitanow_" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener">
+        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+      </a>
+      <a href="https://linkedin.com/showcase/licitanowpt" class="social-btn" aria-label="LinkedIn" target="_blank" rel="noopener">
+        <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer mínimo -->
+  <footer class="maint-footer" role="contentinfo">
+    <p>® {{ currentYear }} LicitaNow · Propriedade de
+      <a href="https://macrislda.com" target="_blank" rel="noopener">Macris Lda</a>
+    </p>
+  </footer>
+
+</div>

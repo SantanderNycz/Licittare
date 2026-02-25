@@ -1,0 +1,10 @@
+<section class="stats-section" aria-label="Estatísticas da plataforma">
+  <div class="container stats-grid">
+    @for (stat of stats; track stat.label) {
+      <div class="stat-item" role="group" [attr.aria-label]="stat.label">
+        <div class="stat-value" aria-live="polite">{{ stat.current }}{{ stat.suffix }}</div>
+        <div class="stat-label">{{ stat.label }}</div>
+      </div>
+    }
+  </div>
+</section>

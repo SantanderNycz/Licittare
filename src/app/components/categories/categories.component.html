@@ -1,0 +1,24 @@
+<section class="categories-section" id="categorias" aria-labelledby="cat-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Categorias de Concurso</span>
+      <h2 class="section-title" id="cat-title">Que Tipo de Concursos Pode Criar?</h2>
+      <p class="section-subtitle">A nossa plataforma suporta todos os tipos de concursos ligados ao setor da construção</p>
+    </div>
+
+    <div class="cat-grid">
+      @for (cat of categories; track cat.title) {
+      <article class="cat-card" [style.--card-color]="cat.color">
+        <div class="cat-icon-wrap" aria-hidden="true">
+          <fa-icon class="cat-icon" [icon]="cat.icon"></fa-icon>
+        </div>
+        <h3 class="cat-title">{{ cat.title }}</h3>
+        <p class="cat-desc">{{ cat.description }}</p>
+        <a href="/concursos" class="cat-link" [attr.aria-label]="'Ver ' + cat.title">
+          Saber mais <span aria-hidden="true">➜</span>
+        </a>
+      </article>
+      }
+    </div>
+  </div>
+</section>

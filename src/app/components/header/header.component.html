@@ -1,0 +1,114 @@
+<header class="header" [class.scrolled]="isScrolled() || mobileMenuOpen() || aboutOpen() || solutionsOpen()" role="banner">
+  <div class="header-inner container">
+
+    <!-- Logo -->
+    <a href="#topo" class="logo" aria-label="LicitaNow – Página Inicial">
+      <span class="logo-icon" aria-hidden="true"></span>
+      <img src="../../../assets/logo.png" alt="LicitaNow Logo" width="70">
+      <!-- <span class="logo-text">Licita<strong>Now</strong></span> -->
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="nav-desktop" aria-label="Navegação principal">
+      <ul role="list">
+        <li class="has-dropdown">
+          <button class="nav-btn" [attr.aria-expanded]="aboutOpen()" aria-haspopup="true" (click)="toggleAbout()">
+            Sobre <span class="chevron" [class.open]="aboutOpen()">▾</span>
+          </button>
+          <div class="dropdown" [class.open]="aboutOpen()" role="menu" aria-label="Sobre">
+            <a href="/sobre" role="menuitem" class="dropdown-item">
+              <span class="di-icon" aria-hidden="true"><i class="fa-solid fa-building"></i></span>
+              <span>Sobre nós</span>
+            </a>
+            <a href="/creditos" role="menuitem" class="dropdown-item">
+              <span class="di-icon" aria-hidden="true"><i class="fa-solid fa-credit-card"></i></span>
+              <span>Créditos</span>
+            </a>
+            <a href="/precos" role="menuitem" class="dropdown-item">
+              <span class="di-icon" aria-hidden="true"><i class="fa-solid fa-dollar-sign"></i></span>
+              <span>Preços</span>
+            </a>
+            <a href="/eventos" role="menuitem" class="dropdown-item">
+              <span class="di-icon" aria-hidden="true"><i class="fa-solid fa-calendar-days"></i></span>
+              <span>Eventos</span>
+            </a>
+          </div>
+        </li>
+        <li><a href="/como" class="nav-link">Como Funciona</a></li>
+        <li class="has-dropdown">
+          <button class="nav-btn" [attr.aria-expanded]="solutionsOpen()" aria-haspopup="true" (click)="toggleSolutions()">
+            Soluções <span class="chevron" [class.open]="solutionsOpen()">▾</span>
+          </button>
+          <div class="dropdown" [class.open]="solutionsOpen()" role="menu" aria-label="Soluções">
+            <a href="/concursos" role="menuitem" class="dropdown-item">
+              <span class="di-icon" aria-hidden="true">🏗️</span>
+              <span>Concursos</span>
+            </a>
+            <a href="/servicos" role="menuitem" class="dropdown-item">
+              <span class="di-icon" aria-hidden="true">🔧</span>
+              <span>Serviços</span>
+            </a>
+            <a href="/arquivo" role="menuitem" class="dropdown-item">
+              <span class="di-icon" aria-hidden="true">📁</span>
+              <span>Arquivo</span>
+            </a>
+            <a href="/intervencoes" role="menuitem" class="dropdown-item">
+              <span class="di-icon" aria-hidden="true">🔨</span>
+              <span>Intervenções</span>
+            </a>
+            <a href="/colaboracao" role="menuitem" class="dropdown-item">
+              <span class="di-icon" aria-hidden="true">🤝</span>
+              <span>Colaboração</span>
+            </a>
+          </div>
+        </li>
+        <li><a href="/suporte/0" class="nav-link">Suporte</a></li>
+      </ul>
+    </nav>
+
+    <!-- CTA -->
+    <div class="header-cta">
+      <a href="/login_page" class="btn-login" aria-label="Entrar na plataforma">Entrar</a>
+      <a href="/home#colaboradores" class="btn-primary btn-sm">Começar</a>
+    </div>
+
+    <!-- Mobile Hamburger -->
+    <button class="hamburger" [class.open]="mobileMenuOpen()" (click)="toggleMobileMenu()" [attr.aria-expanded]="mobileMenuOpen()" aria-label="Abrir menu de navegação">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" [class.open]="mobileMenuOpen()" role="dialog" aria-label="Menu móvel">
+    <nav aria-label="Navegação móvel">
+      <div class="mobile-section">
+        <p class="mobile-group-label">Sobre</p>
+        <a href="/sobre" class="mobile-link" (click)="toggleMobileMenu()">Sobre nós</a>
+        <a href="/creditos" class="mobile-link" (click)="toggleMobileMenu()">Créditos</a>
+        <a href="/precos" class="mobile-link" (click)="toggleMobileMenu()">Preços</a>
+        <a href="/eventos" class="mobile-link" (click)="toggleMobileMenu()">Eventos</a>
+      </div>
+      <div class="mobile-section">
+        <a href="/como" class="mobile-link main" (click)="toggleMobileMenu()">Como Funciona</a>
+      </div>
+      <div class="mobile-section">
+        <p class="mobile-group-label">Soluções</p>
+        <a href="/concursos" class="mobile-link" (click)="toggleMobileMenu()">Concursos</a>
+        <a href="/servicos" class="mobile-link" (click)="toggleMobileMenu()">Serviços</a>
+        <a href="/arquivo" class="mobile-link" (click)="toggleMobileMenu()">Arquivo</a>
+        <a href="/intervencoes" class="mobile-link" (click)="toggleMobileMenu()">Intervenções</a>
+        <a href="/colaboracao" class="mobile-link" (click)="toggleMobileMenu()">Colaboração</a>
+      </div>
+      <div class="mobile-section">
+        <a href="/suporte/0" class="mobile-link" (click)="toggleMobileMenu()">Suporte</a>
+      </div>
+      <div class="mobile-actions">
+        <a href="/login_page" class="btn-secondary">Entrar</a>
+        <a href="/home#colaboradores" class="btn-primary" (click)="toggleMobileMenu()">Começar</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Overlay -->
+  <div class="overlay" [class.visible]="mobileMenuOpen() || aboutOpen() || solutionsOpen()" (click)="mobileMenuOpen.set(false); closeDropdowns()" aria-hidden="true"></div>
+</header>

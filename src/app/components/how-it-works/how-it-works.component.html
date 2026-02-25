@@ -1,0 +1,32 @@
+<section class="how-section" id="como" aria-labelledby="how-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Processo Simples</span>
+      <h2 class="section-title" id="how-title">Como Funciona</h2>
+      <p class="section-subtitle">Da criação do concurso à conclusão do projeto em quatro passos simples</p>
+    </div>
+
+    <div class="steps-wrapper">
+      <div class="steps-connector" aria-hidden="true"></div>
+      <div class="steps-grid">
+        @for (step of steps; track step.number; let i = $index) {
+        <article class="step-card" [attr.aria-label]="'Passo ' + step.number + ': ' + step.title">
+          <div class="step-num" aria-hidden="true">{{ step.number }}</div>
+          <div class="step-icon-wrap" aria-hidden="true">
+            <fa-icon class="step-icon" [icon]="step.icon"></fa-icon>
+          </div>
+          <h3 class="step-title">{{ step.title }}</h3>
+          <p class="step-desc">{{ step.description }}</p>
+        </article>
+        }
+      </div>
+    </div>
+
+    <div class="how-cta">
+      <a href="/home#colaboradores" class="btn-primary btn-large">
+        Crie o Seu Primeiro Concurso
+        <span aria-hidden="true">➜</span>
+      </a>
+    </div>
+  </div>
+</section>
