@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { ChangeDetectorRef, NgZone } from "@angular/core";
 
 interface Stat {
   value: number;
@@ -24,8 +25,6 @@ export class StatsComponent implements OnInit {
 
   private animated = false;
 
-  constructor(private el: ElementRef) {}
-
   ngOnInit() {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -42,20 +41,30 @@ export class StatsComponent implements OnInit {
     observer.observe(this.el.nativeElement);
   }
 
+  constructor(
+    private cd: ChangeDetectorRef,
+    private ngZone: NgZone,
+    private el: ElementRef,
+  ) {}
+
   private animateCounters() {
-    this.stats.forEach((stat) => {
-      const duration = 800;
-      const start = performance.now();
-      const animate = (now: number) => {
-        const elapsed = now - start;
-        if (elapsed >= duration) {
-          stat.current = stat.value;
-          return;
-        }
-        stat.current = Math.floor(stat.value * (elapsed / duration));
+    this.ngZone.runOutsideAngular(() => {
+      this.stats.forEach((stat) => {
+        const duration = 700;
+        const start = performance.now();
+        const animate = (now: number) => {
+          const elapsed = now - start;
+          if (elapsed >= duration) {
+            stat.current = stat.value;
+            this.cd.markForCheck();
+            return;
+          }
+          stat.current = Math.floor(stat.value * (elapsed / duration));
+          this.cd.markForCheck();
+          requestAnimationFrame(animate);
+        };
         requestAnimationFrame(animate);
-      };
-      requestAnimationFrame(animate);
+      });
     });
   }
 }
