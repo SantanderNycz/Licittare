@@ -28,6 +28,7 @@ export class HeaderComponent {
 
     if (!clickedInside) {
       this.closeDropdowns();
+      this.mobileMenuOpen.set(false);
     }
   }
 
