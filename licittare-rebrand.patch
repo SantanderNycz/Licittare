@@ -1,0 +1,635 @@
+From ad23e205b9827559180e638065ed69afd255e7e2 Mon Sep 17 00:00:00 2001
+From: Licittare Rebuild <licittare-rebuild@noreply.com>
+Date: Sun, 12 Apr 2026 14:26:05 +0000
+Subject: [PATCH] =?UTF-8?q?rebrand:=20LicitaNow=20=E2=86=92=20Licittare=20?=
+ =?UTF-8?q?+=20visual=20redesign?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+- Nome: LicitaNow substituído por Licittare em todos os ficheiros
+- Logo: imagens removidas, substituídas por wordmark tipográfico
+- Paleta: verde-lima (#85b400) → azul-marinho (#1D3461) + dourado (#C4922A)
+- Fontes: Outfit/Inter → Plus Jakarta Sans/Inter
+- Header: frosted glass branco no scroll, hovers navy subtis
+- Footer: .title-accent usa --color-accent (dourado), social hover dourado
+- Hero: badge, grid e blobs alinhados à nova paleta
+- Categories: cores dos cards azul/dourado institucional
+- How-it-works: step icons com nova paleta
+- Maintenance: wordmark + email atualizado
+- index.html: title e meta description atualizados
+---
+ src/app/components/about/about.component.html |  6 +--
+ .../categories/categories.component.css       |  4 +-
+ .../categories/categories.component.ts        |  8 ++--
+ .../cookie-banner.component.html              |  4 +-
+ .../components/footer/footer.component.css    | 27 ++++++++-----
+ .../components/footer/footer.component.html   | 26 ++++++------
+ .../components/header/header.component.css    | 35 ++++++++--------
+ .../components/header/header.component.html   |  6 +--
+ src/app/components/hero/hero.component.css    | 16 ++++----
+ .../how-it-works/how-it-works.component.css   |  8 ++--
+ .../maintenance/maintenance.component.css     | 24 +++++------
+ .../maintenance/maintenance.component.html    | 13 +++---
+ src/index.html                                |  4 +-
+ src/styles.css                                | 40 +++++++++----------
+ 14 files changed, 112 insertions(+), 109 deletions(-)
+
+diff --git a/src/app/components/about/about.component.html b/src/app/components/about/about.component.html
+index 2594ad6..5701138 100644
+--- a/src/app/components/about/about.component.html
++++ b/src/app/components/about/about.component.html
+@@ -1,11 +1,11 @@
+ <section class="about-section" id="sobre" aria-labelledby="about-title">
+   <div class="container about-grid">
+     <div class="about-content">
+-      <span class="section-tag">Sobre a LicitaNow</span>
++      <span class="section-tag">Sobre a Licittare</span>
+       <h2 class="section-title" id="about-title">A Plataforma de Referência na Construção</h2>
+       <div class="about-text">
+         <p>
+-          Fornecemos soluções digitais inovadoras para o setor da construção, simplificando e otimizando todo o processo de contratação e gestão de projetos. A LicitaNow garante eficiência, fiabilidade e rigor em cada etapa, desde a organização de concursos até à fiscalização de obras privadas e públicas.
++          Fornecemos soluções digitais inovadoras para o setor da construção, simplificando e otimizando todo o processo de contratação e gestão de projetos. A Licittare garante eficiência, fiabilidade e rigor em cada etapa, desde a organização de concursos até à fiscalização de obras privadas e públicas.
+         </p>
+         <p>
+           A nossa plataforma permite que particulares, empresas e profissionais da construção civil submetam propostas para execução de obras, projetos de arquitetura e especialidades, assim como para outras necessidades específicas dos Donos de Obra.
+@@ -14,7 +14,7 @@
+           Os participantes apresentam as suas propostas diretamente na plataforma, sendo geralmente adjudicada a proposta mais baixa. Em caso de incumprimento contratual, asseguramos a substituição pela proposta imediatamente seguinte mais vantajosa.
+         </p>
+       </div>
+-      <a href="/sobre" class="btn-primary about-btn" aria-label="Saber mais sobre a LicitaNow">
++      <a href="/sobre" class="btn-primary about-btn" aria-label="Saber mais sobre a Licittare">
+         Saber mais sobre nós
+         <span aria-hidden="true">➜</span>
+       </a>
+diff --git a/src/app/components/categories/categories.component.css b/src/app/components/categories/categories.component.css
+index 7d7d31e..7648147 100644
+--- a/src/app/components/categories/categories.component.css
++++ b/src/app/components/categories/categories.component.css
+@@ -41,7 +41,7 @@
+ .cat-card:hover {
+   transform: translateY(-6px);
+   box-shadow: var(--shadow-md);
+-  border-color: rgba(83, 162, 29, 0.25);
++  border-color: rgba(29, 52, 97, 0.2);
+ }
+ 
+ .cat-card:hover::before {
+@@ -61,7 +61,7 @@
+ 
+ .cat-icon {
+   font-size: 1.5rem;
+-  color: var(--color-primary);
++  color: var(--card-color, var(--color-primary));
+ }
+ 
+ .cat-title {
+diff --git a/src/app/components/categories/categories.component.ts b/src/app/components/categories/categories.component.ts
+index ebca361..466af75 100644
+--- a/src/app/components/categories/categories.component.ts
++++ b/src/app/components/categories/categories.component.ts
+@@ -22,28 +22,28 @@ export class CategoriesComponent {
+       title: "Concursos de Construção",
+       description:
+         "Publique concursos para obras novas, remodelações, legalizações ou ampliações, e encontre as melhores empresas para o seu projeto.",
+-      color: "#056610",
++      color: "#1D3461",
+     },
+     {
+       icon: faWrench,
+       title: "Concursos de Serviços",
+       description:
+         "Gestão de obra, fiscalização, arquitetura, engenharia, topografia e outros serviços técnicos, tudo com total transparência e controlo.",
+-      color: "#1A7B18",
++      color: "#2C5282",
+     },
+     {
+       icon: faHandshake,
+       title: "Concursos de Subcontratação",
+       description:
+         "Encontre subempreiteiros especializados para fases específicas da construção desde estruturas a acabamentos.",
+-      color: "#339F33",
++      color: "#C4922A",
+     },
+     {
+       icon: faBoxOpen,
+       title: "Outros",
+       description:
+         "Organize concursos para o aluguer de equipamentos, fornecimento de materiais de construção ou qualquer outra necessidade do setor.",
+-      color: "#66C366",
++      color: "#A67820",
+     },
+   ];
+ }
+diff --git a/src/app/components/cookie-banner/cookie-banner.component.html b/src/app/components/cookie-banner/cookie-banner.component.html
+index d2bb392..940a728 100644
+--- a/src/app/components/cookie-banner/cookie-banner.component.html
++++ b/src/app/components/cookie-banner/cookie-banner.component.html
+@@ -4,7 +4,7 @@
+       <span class="cookie-icon" aria-hidden="true">🍪</span>
+       <div class="cookie-text">
+         <strong>Preferências de Cookies</strong>
+-        <p>Usamos apenas cookies essenciais. Ao clicar em «Aceitar», autoriza o tratamento destes dados pela LicitaNow.</p>
++        <p>Usamos apenas cookies essenciais. Ao clicar em «Aceitar», autoriza o tratamento destes dados pela Licittare.</p>
+       </div>
+       <div class="cookie-actions">
+         <button class="btn-cookie-info" (click)="openModal()" aria-label="Saber mais sobre cookies">
+@@ -23,7 +23,7 @@
+   <div class="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title">
+     <h3 id="cookie-modal-title">Configuração de Cookies</h3>
+     <p>Usamos apenas cookies essenciais para o funcionamento do site e não partilhamos dados com terceiros.</p>
+-    <p>Ao clicar em «Aceitar», autoriza e aceita o tratamento destes dados pela LicitaNow.</p>
++    <p>Ao clicar em «Aceitar», autoriza e aceita o tratamento destes dados pela Licittare.</p>
+     <p>Para mais informações, leia a nossa <a href="/politica_de_privacidade">política de privacidade</a> e os nossos <a href="/termos_e_condicoes">termos e condições</a>.</p>
+     <div class="modal-actions">
+       <button class="btn-cookie-info" (click)="closeModal()">Fechar</button>
+diff --git a/src/app/components/footer/footer.component.css b/src/app/components/footer/footer.component.css
+index 669da2e..27f14a3 100644
+--- a/src/app/components/footer/footer.component.css
++++ b/src/app/components/footer/footer.component.css
+@@ -20,17 +20,26 @@
+ .footer-logo {
+   display: flex;
+   align-items: center;
+-  gap: 0.5rem;
+-  font-family: var(--font-display);
+-  font-size: 1.3rem;
+-  color: #fff;
++  text-decoration: none;
+   margin-bottom: 1rem;
+ }
+-.footer-logo .logo-icon {
++
++.footer-wordmark {
++  font-family: var(--font-display);
+   font-size: 1.4rem;
++  font-weight: 400;
++  letter-spacing: -0.03em;
++  color: rgba(255, 255, 255, 0.9);
++  line-height: 1;
+ }
+-.footer-logo strong {
+-  color: var(--color-primary-light);
++
++.footer-wordmark strong {
++  font-weight: 800;
++  color: var(--color-accent);
++}
++
++.title-accent {
++  color: var(--color-accent);
+ }
+ 
+ .footer-tagline {
+@@ -62,8 +71,8 @@
+     border-color var(--transition-fast);
+ }
+ .social-btn:hover {
+-  background: var(--color-primary);
+-  border-color: var(--color-primary);
++  background: var(--color-accent);
++  border-color: var(--color-accent);
+   color: #fff;
+ }
+ 
+diff --git a/src/app/components/footer/footer.component.html b/src/app/components/footer/footer.component.html
+index f7bf2d2..74a7bb9 100644
+--- a/src/app/components/footer/footer.component.html
++++ b/src/app/components/footer/footer.component.html
+@@ -4,10 +4,8 @@
+ 
+       <!-- Brand -->
+       <div class="footer-brand">
+-        <a href="/home" class="footer-logo" aria-label="LicitaNow – início">
+-          <img src="../../../assets/logo-border.png" alt="LicitaNow Logo" width="120">
+-          <!-- <span class="logo-icon" aria-hidden="true">⚡</span>
+-          <span class="logo-text">Licita<strong>Now</strong></span> -->
++        <a href="/home" class="footer-logo" aria-label="Licittare – início">
++          <span class="footer-wordmark">Lici<strong>ttare</strong></span>
+         </a>
+         <p class="footer-tagline">
+           Gestão de propostas transparentes baseadas em concursos. A ligar proprietários a empreiteiros desde 2025.
+@@ -41,7 +39,7 @@
+ 
+       <!-- Links Úteis -->
+       <nav class="footer-col" aria-label="Links úteis">
+-        <h4 class="footer-col-title">Links <span style="color: #6CB500"> Úteis</span></h4>
++        <h4 class="footer-col-title">Links <span class="title-accent">Úteis</span></h4>
+         <ul>
+           <li><a href="/sobre">Sobre nós</a></li>
+           <li><a href="/creditos">Créditos</a></li>
+@@ -52,7 +50,7 @@
+ 
+       <!-- Soluções -->
+       <nav class="footer-col" aria-label="As nossas soluções">
+-        <h4 class="footer-col-title">Nossas <span style="color: #6CB500"> Soluções</span></h4>
++        <h4 class="footer-col-title">Nossas <span class="title-accent">Soluções</span></h4>
+         <ul>
+           <li><a href="/concursos">Concursos</a></li>
+           <li><a href="/servicos">Serviços</a></li>
+@@ -64,24 +62,24 @@
+ 
+       <!-- Contacto + Payment -->
+       <div class="footer-col footer-contact">
+-        <h4 class="footer-col-title">Entre em <span style="color: #6CB500"> Contato</span></h4>
++        <h4 class="footer-col-title">Entre em <span class="title-accent">Contato</span></h4>
+         <ul>
+           <li>
+-            <a href="mailto:geral@licitanow.com" class="contact-link">
++            <a href="mailto:geral@licittare.pt" class="contact-link">
+               <span aria-hidden="true">✉</span>
+-              geral&#64;licitanow.com
++              geral&#64;licittare.pt
+             </a>
+           </li>
+           <li>
+-            <a href="mailto:contabilidade@macrislda.com" class="contact-link">
++            <a href="mailto:suporte@licittare.pt" class="contact-link">
+               <span aria-hidden="true">✉</span>
+-              contabilidade&#64;macrislda.com
++              suporte&#64;licittare.pt
+             </a>
+           </li>
+         </ul>
+ 
+         <div class="payment-methods" aria-label="Métodos de pagamento aceites">
+-          <h4 class="footer-col-title">Métodos de <span style="color: #6CB500"> Pagamento</span></h4>
++          <h4 class="footer-col-title">Métodos de <span class="title-accent">Pagamento</span></h4>
+           <div class="payment-badges">
+             <span class="pay-badge">
+               <img src="assets/visa.png" alt="Visa">
+@@ -102,7 +100,7 @@
+ 
+       <!-- Newsletter -->
+       <div class="footer-col footer-newsletter">
+-        <h4 class="footer-col-title">Nossa <span style="color: #6CB500"> Newsletter</span></h4>
++        <h4 class="footer-col-title">Nossa <span class="title-accent">Newsletter</span></h4>
+         <p class="newsletter-desc">Fique a par dos nossos projetos mais recentes e das tendências do setor.</p>
+         @if (newsletterSubmitted()) {
+         <p class="newsletter-ok" role="alert">✅ Subscrito com sucesso!</p>
+@@ -136,7 +134,7 @@
+   <!-- Bottom bar -->
+   <div class="footer-bottom">
+     <div class="container footer-bottom-inner">
+-      <p>® {{ currentYear }} LicitaNow. Marca registada, propriedade de <a href="https://macrislda.com" target="_blank" rel="noopener">Macris Lda</a>. Todos os direitos reservados.</p>
++      <p>® {{ currentYear }} Licittare. Todos os direitos reservados.</p>
+       <div class="footer-legal">
+         <a href="/politica_de_privacidade">Política de Privacidade</a>
+         <a href="/termos_e_condicoes">Termos e Condições</a>
+diff --git a/src/app/components/header/header.component.css b/src/app/components/header/header.component.css
+index c7b6506..2718918 100644
+--- a/src/app/components/header/header.component.css
++++ b/src/app/components/header/header.component.css
+@@ -13,9 +13,9 @@
+ }
+ 
+ .header.scrolled {
+-  background: rgba(0, 0, 0, 0.06);
+-  backdrop-filter: blur(12px);
+-  -webkit-backdrop-filter: blur(12px);
++  background: rgba(255, 255, 255, 0.88);
++  backdrop-filter: blur(14px);
++  -webkit-backdrop-filter: blur(14px);
+   box-shadow:
+     0 1px 0 var(--color-border),
+     var(--shadow-sm);
+@@ -31,20 +31,21 @@
+ /* Logo */
+ .logo {
+   display: flex;
+-  gap: 0.5rem;
+-}
+-
+-.logo img {
+-  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.5))
+-    drop-shadow(0 0 6px rgba(0, 0, 0, 0.5))
+-    drop-shadow(0 0 12px rgba(0, 0, 0, 0.5));
++  align-items: center;
++  text-decoration: none;
+ }
+ 
+-.logo-icon {
+-  font-size: 1.5rem;
++.logo-wordmark {
++  font-family: var(--font-display);
++  font-size: 1.45rem;
++  font-weight: 400;
++  letter-spacing: -0.03em;
++  color: var(--color-text-primary);
++  line-height: 1;
+ }
+ 
+-.logo-text strong {
++.logo-wordmark strong {
++  font-weight: 800;
+   color: var(--color-primary);
+ }
+ 
+@@ -84,8 +85,8 @@
+ 
+ .nav-link:hover,
+ .nav-btn:hover {
+-  color: #fff;
+-  background: rgba(34, 34, 34, 0.3);
++  color: var(--color-primary);
++  background: rgba(29, 52, 97, 0.07);
+   border-radius: var(--radius-sm);
+ }
+ 
+@@ -145,8 +146,8 @@
+ }
+ 
+ .dropdown-item:hover {
+-  background: rgba(56, 56, 56, 0.35);
+-  color: #fff;
++  background: rgba(29, 52, 97, 0.07);
++  color: var(--color-primary);
+ }
+ 
+ .di-icon {
+diff --git a/src/app/components/header/header.component.html b/src/app/components/header/header.component.html
+index 9aed245..2ca8f05 100644
+--- a/src/app/components/header/header.component.html
++++ b/src/app/components/header/header.component.html
+@@ -2,10 +2,8 @@
+   <div class="header-inner container">
+ 
+     <!-- Logo -->
+-    <a href="#topo" class="logo" aria-label="LicitaNow – Página Inicial">
+-      <span class="logo-icon" aria-hidden="true"></span>
+-      <img src="../../../assets/logo.png" alt="LicitaNow Logo" width="70">
+-      <!-- <span class="logo-text">Licita<strong>Now</strong></span> -->
++    <a href="#topo" class="logo" aria-label="Licittare – Página Inicial">
++      <span class="logo-wordmark">Lici<strong>ttare</strong></span>
+     </a>
+ 
+     <!-- Desktop Nav -->
+diff --git a/src/app/components/hero/hero.component.css b/src/app/components/hero/hero.component.css
+index 4bb308a..c94d28e 100644
+--- a/src/app/components/hero/hero.component.css
++++ b/src/app/components/hero/hero.component.css
+@@ -37,24 +37,24 @@
+   background: var(--color-accent);
+   bottom: -100px;
+   left: 10%;
+-  opacity: 0.12;
++  opacity: 0.1;
+ }
+ 
+ .blob-3 {
+   width: 300px;
+   height: 300px;
+-  background: #7c3aed;
++  background: #2C5282;
+   top: 40%;
+   left: 40%;
+-  opacity: 0.08;
++  opacity: 0.06;
+ }
+ 
+ .hero-grid {
+   position: absolute;
+   inset: 0;
+   background-image:
+-    linear-gradient(to right, rgba(26, 107, 255, 0.05) 1px, transparent 1px),
+-    linear-gradient(to bottom, rgba(26, 107, 255, 0.05) 1px, transparent 1px);
++    linear-gradient(to right, rgba(29, 52, 97, 0.04) 1px, transparent 1px),
++    linear-gradient(to bottom, rgba(29, 52, 97, 0.04) 1px, transparent 1px);
+   background-size: 60px 60px;
+   mask-image: radial-gradient(
+     ellipse 80% 80% at 50% 50%,
+@@ -74,8 +74,8 @@
+   display: inline-flex;
+   align-items: center;
+   gap: 0.5rem;
+-  background: rgba(26, 107, 255, 0.08);
+-  border: 1px solid rgba(26, 107, 255, 0.2);
++  background: rgba(29, 52, 97, 0.06);
++  border: 1px solid rgba(29, 52, 97, 0.18);
+   border-radius: 999px;
+   padding: 0.4rem 1rem;
+   font-size: 0.78rem;
+@@ -256,7 +256,7 @@
+   color: var(--color-accent-dark);
+   font-weight: 600;
+   margin-bottom: 1rem;
+-  background: rgba(245, 166, 35, 0.1);
++  background: rgba(196, 146, 42, 0.1);
+   padding: 0.3rem 0.6rem;
+   border-radius: var(--radius-sm);
+   width: fit-content;
+diff --git a/src/app/components/how-it-works/how-it-works.component.css b/src/app/components/how-it-works/how-it-works.component.css
+index 2e1332a..90a60a1 100644
+--- a/src/app/components/how-it-works/how-it-works.component.css
++++ b/src/app/components/how-it-works/how-it-works.component.css
+@@ -48,7 +48,7 @@
+   font-weight: 800;
+   color: var(--color-primary);
+   background: rgba(250, 250, 250, 0.95);
+-  border: 1.5px solid rgba(83, 162, 29, 0.35);
++  border: 1.5px solid rgba(29, 52, 97, 0.3);
+   width: 32px;
+   height: 32px;
+   border-radius: 50%;
+@@ -66,10 +66,10 @@
+   height: 64px;
+   background: linear-gradient(
+     135deg,
+-    rgba(83, 162, 29, 0.25),
+-    rgba(83, 162, 29, 0.1)
++    rgba(29, 52, 97, 0.18),
++    rgba(29, 52, 97, 0.07)
+   );
+-  border: 2px solid rgba(83, 162, 29, 0.2);
++  border: 2px solid rgba(29, 52, 97, 0.15);
+   border-radius: var(--radius-md);
+   display: flex;
+   align-items: center;
+diff --git a/src/app/components/maintenance/maintenance.component.css b/src/app/components/maintenance/maintenance.component.css
+index 3a1473d..5b34352 100644
+--- a/src/app/components/maintenance/maintenance.component.css
++++ b/src/app/components/maintenance/maintenance.component.css
+@@ -85,27 +85,25 @@
+ .logo {
+   display: flex;
+   align-items: center;
+-  gap: 0.5rem;
+-  font-family: var(--font-display);
+-  font-size: 1.4rem;
+-  color: #fff;
+   text-decoration: none;
+   transition: opacity var(--transition-fast);
+ }
+ .logo:hover {
+   opacity: 0.8;
+ }
+-.logo .logo-icon {
+-  font-size: 1.6rem;
+-}
+-.logo strong {
+-  color: var(--color-primary-light);
++
++.logo-wordmark {
++  font-family: var(--font-display);
++  font-size: 1.5rem;
++  font-weight: 400;
++  letter-spacing: -0.03em;
++  color: rgba(255,255,255,0.9);
++  line-height: 1;
+ }
+ 
+-.logo img {
+-  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.6))
+-    drop-shadow(0 0 6px rgba(0, 0, 0, 0.3))
+-    drop-shadow(0 0 12px rgba(0, 0, 0, 0.2));
++.logo-wordmark strong {
++  font-weight: 800;
++  color: var(--color-accent);
+ }
+ 
+ /* ---------- Animated Icon ---------- */
+diff --git a/src/app/components/maintenance/maintenance.component.html b/src/app/components/maintenance/maintenance.component.html
+index fc428e0..19961aa 100644
+--- a/src/app/components/maintenance/maintenance.component.html
++++ b/src/app/components/maintenance/maintenance.component.html
+@@ -12,8 +12,8 @@
+   <main class="content" role="main">
+ 
+     <!-- Logo -->
+-    <a href="/" class="logo" aria-label="LicitaNow – Página inicial">
+-      <span class="logo-icon" aria-hidden="true"><img src="../../../assets/logo.png" alt="LicitaNow Logo" width="70"></span>
++    <a href="/" class="logo" aria-label="Licittare – Página inicial">
++      <span class="logo-wordmark">Lici<strong>ttare</strong></span>
+       <!-- <span class="logo-text">Licita<strong>Now</strong></span> -->
+     </a>
+ 
+@@ -37,7 +37,7 @@
+       </span>
+       <h1 class="title">Estamos a melhorar<br>a plataforma para si</h1>
+       <p class="subtitle">
+-        A LicitaNow encontra-se temporariamente indisponível enquanto realizamos
++        A Licittare encontra-se temporariamente indisponível enquanto realizamos
+         melhorias técnicas. Voltaremos em breve com novidades!
+       </p>
+     </div>
+@@ -72,7 +72,7 @@
+         <div>
+           <strong>Contacto</strong>
+           <p>
+-            <a href="mailto:geral&#64;licitanow.com">geral&#64;licitanow.com</a>
++            <a href="mailto:geral&#64;licittare.pt">geral&#64;licittare.pt</a>
+           </p>
+         </div>
+       </div>
+@@ -93,7 +93,7 @@
+     </div>
+ 
+     <!-- Redes sociais -->
+-    <div class="socials" aria-label="Redes sociais da LicitaNow">
++    <div class="socials" aria-label="Redes sociais da Licittare">
+       <a href="https://www.facebook.com/profile.php?id=61579034193178" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener">
+         <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+       </a>
+@@ -114,8 +114,7 @@
+ 
+   <!-- Footer mínimo -->
+   <footer class="maint-footer" role="contentinfo">
+-    <p>® {{ currentYear }} LicitaNow · Propriedade de
+-      <a href="https://macrislda.com" target="_blank" rel="noopener">Macris Lda</a>
++    <p>® {{ currentYear }} Licittare
+     </p>
+   </footer>
+ 
+diff --git a/src/index.html b/src/index.html
+index dfe8af3..7b7bcf8 100644
+--- a/src/index.html
++++ b/src/index.html
+@@ -3,8 +3,8 @@
+ 
+ <head>
+   <meta charset="utf-8">
+-  <title>LicitaNow – A Nova Geração de Concursos Online</title>
+-  <meta name="description" content="LicitaNow – Plataforma digital de concursos para o setor da construção. Inovação e confiança em cada proposta.">
++  <title>Licittare – Gestão de Licitações de Obras Públicas</title>
++  <meta name="description" content="Licittare – Plataforma digital de gestão de licitações e concursos para o setor da construção. Transparência e rigor em cada proposta.">
+   <base href="/">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="icon" type="image/x-icon" href="favicon.ico">
+diff --git a/src/styles.css b/src/styles.css
+index 333fdd8..ce22dc8 100644
+--- a/src/styles.css
++++ b/src/styles.css
+@@ -1,32 +1,32 @@
+-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@400;500;600;700&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
++@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:ital,opsz,wght@0,14..32,400..800;1,14..32,400..700&display=swap");
+ 
+ :root {
+   /* Brand Colors */
+-  --color-primary: #85b400;
+-  --color-primary-dark: #53a21d;
+-  --color-primary-light: #85b400;
+-  --color-accent: #85b488;
+-  --color-accent-dark: #85b400;
++  --color-primary: #1D3461;
++  --color-primary-dark: #0F2137;
++  --color-primary-light: #2C5282;
++  --color-accent: #C4922A;
++  --color-accent-dark: #A67820;
+ 
+   /* Neutrals */
+   --color-bg: #ffffff;
+-  --color-bg-alt: #f6f8fc;
+-  --color-bg-dark: #85b400;
++  --color-bg-alt: #F4F6FA;
++  --color-bg-dark: #0D1B2E;
+   --color-bg-dark-alt: #152238;
+-  --color-bg-neutral: #222;
++  --color-bg-neutral: #0D1B2E;
+   --color-surface: #ffffff;
+-  --color-border: #e2e8f0;
++  --color-border: #DDE3EE;
+ 
+   /* Text */
+-  --color-text-primary: #222;
+-  --color-text-secondary: #809090;
+-  --color-text-muted: #8299b5;
++  --color-text-primary: #111827;
++  --color-text-secondary: #6B7A99;
++  --color-text-muted: #94A3B8;
+   --color-text-on-dark: #ffffff;
+-  --color-text-on-dark-muted: rgba(255, 255, 255, 0.9);
++  --color-text-on-dark-muted: rgba(255, 255, 255, 0.82);
+ 
+   /* Typography */
+-  --font-display: "Inter", system-ui, sans-serif;
+-  --font-body: "Outfit", sans-serif;
++  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
++  --font-body: "Inter", system-ui, sans-serif;
+ 
+   /* Spacing */
+   --section-padding: 5rem 1.5rem;
+@@ -39,9 +39,9 @@
+   --radius-xl: 32px;
+ 
+   /* Shadows */
+-  --shadow-sm: 0 2px 8px rgb(83, 162, 29, 0.08);
+-  --shadow-md: 0 8px 32px rgba(83, 162, 29, 0.12);
+-  --shadow-lg: 0 16px 64px rgba(83, 162, 29, 0.18);
++  --shadow-sm: 0 2px 8px rgba(29, 52, 97, 0.07);
++  --shadow-md: 0 8px 32px rgba(29, 52, 97, 0.12);
++  --shadow-lg: 0 16px 64px rgba(29, 52, 97, 0.16);
+ 
+   /* Transitions */
+   --transition-fast: 0.18s ease;
+@@ -118,7 +118,7 @@ ul {
+   letter-spacing: 0.12em;
+   text-transform: uppercase;
+   color: var(--color-primary);
+-  background: rgba(83, 162, 29, 0.1);
++  background: rgba(29, 52, 97, 0.07);
+   padding: 0.35rem 0.85rem;
+   border-radius: 999px;
+   margin-bottom: 1rem;
+-- 
+2.43.0
+
