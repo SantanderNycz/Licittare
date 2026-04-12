@@ -554,7 +554,7 @@ index dfe8af3..7b7bcf8 100644
 +  <meta name="description" content="Licittare – Plataforma digital de gestão de licitações e concursos para o setor da construção. Transparência e rigor em cada proposta.">
    <base href="/">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="icon" type="image/x-icon" href="favicon.ico">
+   <link rel="icon" type="image/x-icon" href="favicon.svg">
 diff --git a/src/styles.css b/src/styles.css
 index 333fdd8..ce22dc8 100644
 --- a/src/styles.css
