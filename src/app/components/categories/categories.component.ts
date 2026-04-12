@@ -22,28 +22,28 @@ export class CategoriesComponent {
       title: "Concursos de Construção",
       description:
         "Publique concursos para obras novas, remodelações, legalizações ou ampliações, e encontre as melhores empresas para o seu projeto.",
-      color: "#056610",
+      color: "#1D3461",
     },
     {
       icon: faWrench,
       title: "Concursos de Serviços",
       description:
         "Gestão de obra, fiscalização, arquitetura, engenharia, topografia e outros serviços técnicos, tudo com total transparência e controlo.",
-      color: "#1A7B18",
+      color: "#2C5282",
     },
     {
       icon: faHandshake,
       title: "Concursos de Subcontratação",
       description:
         "Encontre subempreiteiros especializados para fases específicas da construção desde estruturas a acabamentos.",
-      color: "#339F33",
+      color: "#C4922A",
     },
     {
       icon: faBoxOpen,
       title: "Outros",
       description:
         "Organize concursos para o aluguer de equipamentos, fornecimento de materiais de construção ou qualquer outra necessidade do setor.",
-      color: "#66C366",
+      color: "#A67820",
     },
   ];
 }

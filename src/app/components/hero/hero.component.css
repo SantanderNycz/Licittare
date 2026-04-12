@@ -37,24 +37,24 @@
   background: var(--color-accent);
   bottom: -100px;
   left: 10%;
-  opacity: 0.12;
+  opacity: 0.1;
 }
 
 .blob-3 {
   width: 300px;
   height: 300px;
-  background: #7c3aed;
+  background: #2C5282;
   top: 40%;
   left: 40%;
-  opacity: 0.08;
+  opacity: 0.06;
 }
 
 .hero-grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(to right, rgba(26, 107, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(26, 107, 255, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(29, 52, 97, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(29, 52, 97, 0.04) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(
     ellipse 80% 80% at 50% 50%,
@@ -74,8 +74,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(26, 107, 255, 0.08);
-  border: 1px solid rgba(26, 107, 255, 0.2);
+  background: rgba(29, 52, 97, 0.06);
+  border: 1px solid rgba(29, 52, 97, 0.18);
   border-radius: 999px;
   padding: 0.4rem 1rem;
   font-size: 0.78rem;
@@ -256,7 +256,7 @@
   color: var(--color-accent-dark);
   font-weight: 600;
   margin-bottom: 1rem;
-  background: rgba(245, 166, 35, 0.1);
+  background: rgba(196, 146, 42, 0.1);
   padding: 0.3rem 0.6rem;
   border-radius: var(--radius-sm);
   width: fit-content;

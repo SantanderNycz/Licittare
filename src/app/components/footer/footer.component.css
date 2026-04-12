@@ -20,17 +20,26 @@
 .footer-logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  color: #fff;
+  text-decoration: none;
   margin-bottom: 1rem;
 }
-.footer-logo .logo-icon {
+
+.footer-wordmark {
+  font-family: var(--font-display);
   font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1;
 }
-.footer-logo strong {
-  color: var(--color-primary-light);
+
+.footer-wordmark strong {
+  font-weight: 800;
+  color: var(--color-accent);
+}
+
+.title-accent {
+  color: var(--color-accent);
 }
 
 .footer-tagline {
@@ -62,8 +71,8 @@
     border-color var(--transition-fast);
 }
 .social-btn:hover {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
   color: #fff;
 }
 

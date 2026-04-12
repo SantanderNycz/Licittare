@@ -1,32 +1,32 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@400;500;600;700&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:ital,opsz,wght@0,14..32,400..800;1,14..32,400..700&display=swap");
 
 :root {
   /* Brand Colors */
-  --color-primary: #85b400;
-  --color-primary-dark: #53a21d;
-  --color-primary-light: #85b400;
-  --color-accent: #85b488;
-  --color-accent-dark: #85b400;
+  --color-primary: #1D3461;
+  --color-primary-dark: #0F2137;
+  --color-primary-light: #2C5282;
+  --color-accent: #C4922A;
+  --color-accent-dark: #A67820;
 
   /* Neutrals */
   --color-bg: #ffffff;
-  --color-bg-alt: #f6f8fc;
-  --color-bg-dark: #85b400;
+  --color-bg-alt: #F4F6FA;
+  --color-bg-dark: #0D1B2E;
   --color-bg-dark-alt: #152238;
-  --color-bg-neutral: #222;
+  --color-bg-neutral: #0D1B2E;
   --color-surface: #ffffff;
-  --color-border: #e2e8f0;
+  --color-border: #DDE3EE;
 
   /* Text */
-  --color-text-primary: #222;
-  --color-text-secondary: #809090;
-  --color-text-muted: #8299b5;
+  --color-text-primary: #111827;
+  --color-text-secondary: #6B7A99;
+  --color-text-muted: #94A3B8;
   --color-text-on-dark: #ffffff;
-  --color-text-on-dark-muted: rgba(255, 255, 255, 0.9);
+  --color-text-on-dark-muted: rgba(255, 255, 255, 0.82);
 
   /* Typography */
-  --font-display: "Inter", system-ui, sans-serif;
-  --font-body: "Outfit", sans-serif;
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
 
   /* Spacing */
   --section-padding: 5rem 1.5rem;
@@ -39,9 +39,9 @@
   --radius-xl: 32px;
 
   /* Shadows */
-  --shadow-sm: 0 2px 8px rgb(83, 162, 29, 0.08);
-  --shadow-md: 0 8px 32px rgba(83, 162, 29, 0.12);
-  --shadow-lg: 0 16px 64px rgba(83, 162, 29, 0.18);
+  --shadow-sm: 0 2px 8px rgba(29, 52, 97, 0.07);
+  --shadow-md: 0 8px 32px rgba(29, 52, 97, 0.12);
+  --shadow-lg: 0 16px 64px rgba(29, 52, 97, 0.16);
 
   /* Transitions */
   --transition-fast: 0.18s ease;
@@ -118,7 +118,7 @@ ul {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-primary);
-  background: rgba(83, 162, 29, 0.1);
+  background: rgba(29, 52, 97, 0.07);
   padding: 0.35rem 0.85rem;
   border-radius: 999px;
   margin-bottom: 1rem;
