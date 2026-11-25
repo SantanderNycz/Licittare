@@ -42,7 +42,12 @@
 
         @if (submitted()) {
         <div class="form-success" role="alert" aria-live="polite">
-          <div class="success-icon" aria-hidden="true">✅</div>
+          <div class="success-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="14" cy="14" r="13" stroke="currentColor" stroke-width="2"/>
+              <path d="M8 14l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
           <h4>Pedido enviado com sucesso!</h4>
           <p>Entraremos em contacto em breve. Obrigado pelo interesse.</p>
           <button class="btn-primary" (click)="resetForm()">Enviar outro pedido</button>

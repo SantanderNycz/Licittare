@@ -18,9 +18,9 @@ interface Stat {
 })
 export class StatsComponent implements OnInit {
   stats: Stat[] = [
-    { value: 500, label: "Concursos finalizados", suffix: "", current: 0 },
-    { value: 80, label: "Concursos activos", suffix: "", current: 0 },
-    { value: 1200, label: "Utilizadores", suffix: "", current: 0 },
+    { value: 247, label: "Concursos finalizados", suffix: "+", current: 0 },
+    { value: 83, label: "Concursos ativos", suffix: "", current: 0 },
+    { value: 1847, label: "Utilizadores registados", suffix: "", current: 0 },
   ];
 
   private animated = false;

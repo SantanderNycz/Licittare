@@ -260,6 +260,13 @@
   padding: 0.3rem 0.6rem;
   border-radius: var(--radius-sm);
   width: fit-content;
+  font-variant-numeric: tabular-nums;
+}
+
+.timer-icon-fa {
+  font-size: 0.85rem;
+  color: var(--color-accent-dark);
+  margin-top: 0;
 }
 
 .card-proposals {
@@ -282,8 +289,17 @@
 }
 
 .proposal-rank {
-  font-size: 1rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  min-width: 28px;
+  text-align: center;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.01em;
 }
+.rank-1 { background: rgba(202, 138, 4, 0.14); color: #a16207; }
+.rank-2 { background: rgba(100, 116, 139, 0.12); color: #475569; }
+.rank-3 { background: rgba(120, 53, 15, 0.1);   color: #92400e; }
 .proposal-name {
   flex: 1;
   color: var(--color-text-secondary);

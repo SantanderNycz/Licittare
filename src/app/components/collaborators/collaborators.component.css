@@ -205,7 +205,10 @@ textarea {
 }
 
 .success-icon {
-  font-size: 3rem;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .form-success h4 {

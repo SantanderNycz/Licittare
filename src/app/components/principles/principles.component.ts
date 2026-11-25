@@ -19,22 +19,22 @@ export class PrinciplesComponent {
     {
       icon: faCreditCard,
       title: "Sem Subscrição",
-      description: "Pague apenas pelo que utiliza...",
+      description: "Pague apenas pelos créditos que consome. Sem mensalidades, sem contratos, sem compromissos.",
     },
     {
       icon: faMagnifyingGlass,
-      title: "Transparência",
-      description: "Visibilidade total...",
+      title: "Transparência Total",
+      description: "Todas as propostas são visíveis para o dono de obra. Sem negociações escondidas, sem favorecimentos.",
     },
     {
       icon: faGift,
       title: "Criar Concursos Grátis",
-      description: "Inicie o seu concurso...",
+      description: "Publique o seu concurso sem qualquer custo. Paga apenas quando adjudica — com base nos créditos utilizados.",
     },
     {
       icon: faHandshake,
-      title: "Colaboradores",
-      description: "Adira ao nosso programa...",
+      title: "Rede de Colaboradores",
+      description: "Convide profissionais e empresas para a plataforma e receba uma comissão sobre os créditos que eles utilizarem.",
     },
   ];
 }

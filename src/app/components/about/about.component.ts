@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AboutComponent {
   metrics = [
-    { value: '500+', label: 'Projetos concluídos' },
-    { value: '25+',  label: 'Anos de experiência' },
-    { value: '91%',  label: 'Avaliação de satisfação' },
-    { value: '15+',  label: 'Profissionais licenciados' }
+    { value: '1 200+', label: 'Utilizadores registados' },
+    { value: '< 2h',   label: 'Para a 1.ª proposta' },
+    { value: '0 €',    label: 'Para publicar concursos' },
+    { value: '98%',    label: 'Taxa de satisfação' }
   ];
 }
