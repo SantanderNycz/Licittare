@@ -7,6 +7,7 @@ interface Stat {
   label: string;
   suffix: string;
   current: number;
+  icon: string;
 }
 
 @Component({
@@ -18,9 +19,9 @@ interface Stat {
 })
 export class StatsComponent implements OnInit {
   stats: Stat[] = [
-    { value: 247, label: "Concursos finalizados", suffix: "+", current: 0 },
-    { value: 83, label: "Concursos ativos", suffix: "", current: 0 },
-    { value: 1847, label: "Utilizadores registados", suffix: "", current: 0 },
+    { value: 247, label: "Concursos finalizados", suffix: "+", current: 0, icon: "fa-solid fa-flag-checkered" },
+    { value: 83, label: "Concursos ativos",       suffix: "",  current: 0, icon: "fa-solid fa-bolt" },
+    { value: 1847, label: "Utilizadores registados", suffix: "", current: 0, icon: "fa-solid fa-users" },
   ];
 
   private animated = false;

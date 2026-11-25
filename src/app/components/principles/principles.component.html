@@ -11,7 +11,7 @@
       @for (p of principles; track p.title) {
       <article class="principle-card">
         <div class="principle-icon" aria-hidden="true">
-          <fa-icon [icon]="p.icon"></fa-icon>
+          <fa-icon [icon]="p.icon" class="p-icon"></fa-icon>
         </div>
         <h3 class="principle-title">{{ p.title }}</h3>
         <p class="principle-desc">{{ p.description }}</p>

@@ -66,9 +66,9 @@
 .nav-link,
 .nav-btn {
   font-family: var(--font-body);
-  font-size: 1.1rem;
+  font-size: 0.875rem;
   font-weight: 500;
-  color: var(--color-text-primary);
+  color: var(--color-text-secondary);
   padding: 0.5rem 0.85rem;
   border-radius: var(--radius-sm);
   border: none;
@@ -138,7 +138,7 @@
   gap: 0.75rem;
   padding: 0.6rem 0.85rem;
   border-radius: var(--radius-sm);
-  font-size: 1.1rem;
+  font-size: 0.875rem;
   color: var(--color-text-primary);
   transition:
     background var(--transition-fast),
