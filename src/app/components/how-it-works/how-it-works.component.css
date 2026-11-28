@@ -11,8 +11,8 @@
 .steps-connector {
   position: absolute;
   top: 32px;
-  left: calc(12.5% + 32px);
-  right: calc(12.5% + 32px);
+  left: calc(12.5% + 22px);
+  right: calc(12.5% + 22px);
   height: 1px;
   background: linear-gradient(
     90deg,
@@ -39,37 +39,17 @@
   position: relative;
 }
 
-.step-num {
-  font-family: var(--font-display);
-  font-size: 0.75rem;
-  font-weight: 800;
-  color: var(--color-primary);
-  background: var(--color-bg);
-  border: 2px solid var(--color-primary);
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-}
-
 .step-icon-wrap {
   width: 64px;
   height: 64px;
-  background: rgba(29, 52, 97, 0.06);
+  background: color-mix(in srgb, var(--color-primary) 6%, var(--color-bg));
   border: 1px solid rgba(29, 52, 97, 0.12);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.25rem;
-  margin-top: 1rem;
+  margin-top: 0;
   transition:
     background var(--transition-base),
     border-color var(--transition-base),
