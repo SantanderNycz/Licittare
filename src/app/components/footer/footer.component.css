@@ -80,15 +80,14 @@
 /* .footer-col {} */
 
 .footer-col-title {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 600;
-  /* min-height: 1rem; */
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #eee;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.5);
   margin-top: 0.1rem;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1rem;
 }
 
 .footer-col ul {
@@ -118,7 +117,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: var(--color-text-on-dark-muted);
   transition: color var(--transition-fast);
 }

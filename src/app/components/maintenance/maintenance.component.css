@@ -36,10 +36,10 @@
 .blob-2 {
   width: 400px;
   height: 400px;
-  background: #7c3aed;
+  background: var(--color-accent);
   bottom: -100px;
   left: -100px;
-  opacity: 0.14;
+  opacity: 0.1;
 }
 
 .blob-3 {
@@ -124,11 +124,11 @@
 
 .ring-outer {
   inset: 0;
-  border-color: rgba(26, 107, 255, 0.35);
+  border-color: rgba(29, 52, 97, 0.4);
   animation: spinSlow 8s linear infinite;
   background: conic-gradient(
     from 0deg,
-    rgba(26, 107, 255, 0.3),
+    rgba(29, 52, 97, 0.35),
     transparent 70%
   );
   border-radius: 50%;
@@ -136,7 +136,7 @@
 
 .ring-inner {
   inset: 14px;
-  border-color: rgba(26, 107, 255, 0.2);
+  border-color: rgba(29, 52, 97, 0.2);
   animation: spinSlow 5s linear infinite reverse;
   border-top-color: var(--color-primary-light);
 }
@@ -144,8 +144,8 @@
 .icon-center {
   width: 56px;
   height: 56px;
-  background: rgba(26, 107, 255, 0.15);
-  border: 1.5px solid rgba(26, 107, 255, 0.4);
+  background: rgba(29, 52, 97, 0.2);
+  border: 1.5px solid rgba(29, 52, 97, 0.45);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -173,8 +173,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(26, 107, 255, 0.15);
-  border: 1px solid rgba(26, 107, 255, 0.35);
+  background: rgba(29, 52, 97, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 999px;
   padding: 0.35rem 1rem;
   font-size: 0.78rem;
@@ -213,8 +213,8 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-xl);
   padding: 1.5rem 2.5rem;
 }
@@ -282,14 +282,11 @@
 }
 
 .info-icon {
-  font-size: 1.3rem;
   flex-shrink: 0;
-  margin-top: -0.1rem;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.info-icon:hover {
-  color: rgba(255, 255, 255, 1);
+  margin-top: 0.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
 }
 
 .info-card strong {
@@ -346,9 +343,7 @@
   background: var(--color-primary);
   border-color: var(--color-primary);
   color: #fff;
-  font-size: 1.4rem;
-  transition: ease-in-out 0.2s;
-  transform: translate();
+  transform: translateY(-2px);
 }
 
 /* ---------- Footer ---------- */

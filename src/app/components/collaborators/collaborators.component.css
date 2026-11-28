@@ -31,14 +31,23 @@
 }
 
 .benefit-icon {
-  font-size: 2.5rem;
+  width: 44px;
+  height: 44px;
+  background: rgba(29, 52, 97, 0.07);
+  border: 1px solid rgba(29, 52, 97, 0.12);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  /* color: var(--color-primary); */
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  margin-top: 0.1rem;
 }
 
 .benefit-item strong {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--color-text-primary);
   display: block;
@@ -46,9 +55,9 @@
 }
 
 .benefit-item p {
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 /* Form Card */
@@ -126,7 +135,7 @@ select:focus,
 textarea:focus {
   border-color: var(--color-primary);
   background: #fff;
-  box-shadow: 0 0 0 3px rgba(26, 107, 255, 0.12);
+  box-shadow: 0 0 0 3px rgba(29, 52, 97, 0.1);
 }
 
 select {

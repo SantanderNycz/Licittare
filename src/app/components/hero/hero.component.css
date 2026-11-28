@@ -154,7 +154,8 @@
 }
 
 .btn-arrow {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   transition: transform var(--transition-fast);
 }
 .btn-primary:hover .btn-arrow {
